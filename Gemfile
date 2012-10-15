@@ -28,7 +28,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'turn', '< 0.8.3', :require => false
   gem 'sqlite3'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'
