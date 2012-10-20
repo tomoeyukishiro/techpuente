@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :lesson do
+    title "MyString"
+    body "MyString"
   end
 end

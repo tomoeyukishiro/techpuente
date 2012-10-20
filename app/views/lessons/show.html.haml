@@ -1,5 +1,11 @@
 %p#notice= notice
 
+%p
+  %b Title:
+  = @lesson.title
+%p
+  %b Body:
+  = @lesson.body
 
 = link_to 'Edit', edit_lesson_path(@lesson)
 \|
