@@ -12,5 +12,12 @@
   .field
     = f.label :body
     = f.text_field :body
+-#must not leave the next two blank
+  .prev
+    = f.label :prev
+    = f.text_field :prev
+  .next
+    = f.label :next
+    = f.text_field :next
   .actions
     = f.submit 'Save'
