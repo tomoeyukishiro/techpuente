@@ -22,6 +22,12 @@ module NavigationHelpers
     when /^the lesson page for "(.*)"/
       lesson_path(Lesson.find_by_title($1))
 
+    when /^the new lesson page/
+      new_lesson_path
+
+    when /^the edit page for (.*)/
+      edit_lesson_path($1)
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

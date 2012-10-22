@@ -42,5 +42,6 @@ group :development, :test do
   gem 'autotest-rails'
   gem 'autotest-growl'
   gem 'autotest-fsevent'
+  gem 'simplecov'
   gem 'factory_girl_rails'
 end

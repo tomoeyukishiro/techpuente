@@ -8,9 +8,9 @@ Background: lessons have been added to the database
 
     Given the following lessons exist:
     | title              | body                                      | next      | prev  |
-    | First Lesson       | This is the sample body of the module     | 2         |       |
+    | First Lesson       | This is the sample body of the module     | 2         | 1     |
     | Second Lesson      | This is another sample body of the module | 3         | 1     |
-    | Third Lesson       | This is the 3rd elsson                    |           | 2     |
+    | Third Lesson       | This is the 3rd elsson                    | 3         | 2     |
 
 
 #Scenario: see a list of lessons
@@ -19,9 +19,9 @@ Background: lessons have been added to the database
 #    When I follow "Lessons" 
 #    Then I should see all of the lessons 
 
-#Scenario: see list of lessons
-#     Given I am on the Lessons list page
-#     Then I should see all of the lessons
+Scenario: see list of lessons
+     Given I am on the Lessons list page
+     Then I should see all of the lessons
 
 Scenario: navigate to the next module
     Given I am on the lesson page for "First Lesson"
@@ -32,5 +32,26 @@ Scenario: navigate to the previous module
     Given I go to the lesson page for "Second Lesson"
     When follow "Prev"
     Then I should see "First Lesson"
+
+Scenario: add new lesson
+    Given I am on the new lesson page
+    And I fill in "lesson_title" with "Lesson Especial"
+    And I fill in "lesson_body" with "Es un lesson que yo quiero"
+    And I fill in "lesson_prev" with "1"
+    And I fill in "lesson_next" with "2"
+    And I press "Save"
+    Then I should see "Lesson was successfully created"
+
+Scenario: edit lesson
+    Given I am on the edit page for 1
+    And I fill in "lesson_title" with "New Lesson Name"
+    And I press "Save"
+    Then I should see "Lesson was successfully updated"
+
+
+Scenario: delete lesson
+    Given I am on the Lessons list page
+    And I follow "delete_3"
+    Then I should not see "elsson"
 
 
