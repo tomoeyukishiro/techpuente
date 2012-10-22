@@ -7,8 +7,6 @@
     %th
     %th
     %th
-    %th Prev
-    %th Next
 
   - @lessons.each do |lesson|
     %tr
@@ -17,8 +15,6 @@
       %td= link_to 'Show', lesson
       %td= link_to 'Edit', edit_lesson_path(lesson)
       %td= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' }, id: 'delete_'+lesson.id.to_s
-      %td= link_to 'Prev', lesson_path(lesson.prev)
-      %td= link_to 'Next', lesson_path(lesson.next)
 
 
 %br
