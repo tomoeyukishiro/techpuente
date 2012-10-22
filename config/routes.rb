@@ -4,7 +4,10 @@ TechpuenteApp::Application.routes.draw do
   get "home/about"
   root :to => "home#index"
 
+
   resources :lessons
+  resources :home
+  resources :users
 
 
   # The priority is based upon order of creation:
