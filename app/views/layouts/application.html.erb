@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TechpuenteApp</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <head>
+        <title>TechpuenteApp</title>
+        <%= stylesheet_link_tag    "application" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div id="page">
+            <header class="cf">
+            <h1>
+                <a href="/">
+                    <img src="techbridgelogo.png" alt="Techbridge"/>
+                </a>
+            </h1>
+            <nav id="main-navigation">
+            <ul>
+                <li><a href="<%= lessons_path %>">Lessons</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Contact</a></li>
+                <li><a href="/">Account</a></li>
+            </ul>
+            </nav>
+            </header>
+            <%= yield %>
+            <footer>
+            Copyright blahblah
+            </footer>
+        </div>
+    </body>
 </html>
