@@ -7,26 +7,30 @@ Feature: navigate between different lessons
 Background: lessons have been added to the database
 
     Given the following lessons exist:
-    | title              | body                                      | 
-    | First Lesson       | This is the sample body of the module     |
-    | Second Lesson      | This is another sample body of the module |
+    | title              | body                                      | next      | prev  |
+    | First Lesson       | This is the sample body of the module     | 2         |       |
+    | Second Lesson      | This is another sample body of the module | 3         | 1     |
+    | Third Lesson       | This is the 3rd elsson                    |           | 2     |
 
 
-Scenario: see a list of lessons
-    Given I am on the TechPuente home page
-    When I follow "Lessons" 
-    Then I should see all of the lessons 
+#Scenario: see a list of lessons
+#    Given I am on the home page
+#    Then show me the page
+#    When I follow "Lessons" 
+#    Then I should see all of the lessons 
+
+#Scenario: see list of lessons
+#     Given I am on the Lessons list page
+#     Then I should see all of the lessons
 
 Scenario: navigate to the next module
-    Given I am on the Lessons list page
-    When I go to the show page for "First Lesson"
-    And follow "Next"
+    Given I am on the lesson page for "First Lesson"
+    When follow "Next"
     Then I should see "Second Lesson"
 
 Scenario: navigate to the previous module
-Given I am on the Lessons list page
-    When I go to the show page for "Second Lesson"
-    And follow "Prev"
+    Given I go to the lesson page for "Second Lesson"
+    When follow "Prev"
     Then I should see "First Lesson"
 
 
