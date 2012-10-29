@@ -3,10 +3,10 @@
 Given /that I have an account for the website/ do
 end
 
-When /I fill in "email" with "user@gmail.com"/ do
+When /I fill in "email" with "(.*)"/ do
 end
 
-And /I fill in "password" with "123456"/ do
+And /I fill in "password" with "(.*)"/ do
 end
 
 And /I press "Sign_In"/ do
@@ -15,7 +15,7 @@ end
 Then /I should be on the main page/ do
 end
 
-Then /I should see "FirstUser"/ do
+Then /I should see "(.*)"/ do
 end
 
 #SCENARIO: LOGIN TO WEBSITE FROM MODULE PAGE
@@ -32,10 +32,10 @@ end
 Then /I should see "Sign In"/ do
 end
 
-When /I fill in "email" with "user@gmail.com"/ do
+When /I fill in "email" with "(.*)"/ do
 end
 
-And /I fill in "password" with "123456"/ do
+And /I fill in "password" with "(.*)"/ do
 end
 
 And /I press "Sign_In"/ do
@@ -44,7 +44,7 @@ end
 Then /I should be on the modules page/ do
 end
 
-And /I should see "Hello FirstUser"/ do
+And /I should see "Hello (.*)"/ do
 end
 
 #SCENARIO: SIGN IN
@@ -61,16 +61,16 @@ end
 Then /I should see "Register"/ do
 end
 
-When /I fill in "email" with "user@gmail.com"/ do
+When /I fill in "email" with "(.*)"/ do
 end
 
-And /I fill in "name" with "FirstUser"/ do
+And /I fill in "name" with "(.*)"/ do
 end
 
-And /I fill in "password" with "123456"/ do
+And /I fill in "password" with "(.*)"/ do
 end
 
-And /I fill in "confirm_password" with "123456"/ do
+And /I fill in "confirm_password" with "(.*)"/ do
 end
 
 And /I press "Sign_Up"/ do
@@ -79,7 +79,7 @@ end
 Then /I should be on the home page/ do
 end
 
-And /I should see "Hello FirstUser"/ do
+And /I should see "Hello (.*)"/ do
 end
 
 #SCENARIO: SIGN IN FROM MODULE PAGE
@@ -96,16 +96,16 @@ end
 Then /I should see "Register"/ do
 end
 
-When /I fill in "email" with "user@gmail.com"/ do
+When /I fill in "email" with "(.*)"/ do
 end
 
-And /I fill in "name" with "FirstUser"/ do
+And /I fill in "name" with "(.*)"/ do
 end
 
-And /I fill in "password" with "123456"/ do
+And /I fill in "password" with "(.*)"/ do
 end
 
-And /I fill in "confirm_password" with "123456"/ do
+And /I fill in "confirm_password" with "(.*)"/ do
 end
 
 And /I press "Sign_Up"/ do
@@ -114,7 +114,5 @@ end
 Then /I should be on the module page/ do
 end
 
-And /I should see "Hello FirstUser"/ do
+And /I should see "Hello (.*)"/ do
 end
-
-
