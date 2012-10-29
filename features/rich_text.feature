@@ -1,8 +1,8 @@
 Feature: use rich text on lesson and question pages
 
-  As an admin
-  So that I can create beautiful lessons and question pages
-  I want to be able to use rich text
+    As an admin
+    So that I can present rich, multimedia resources to mentors
+    I want to be able to embed modules with text, videos, and pictures
 
 Background: lessons have been added to the database
 
