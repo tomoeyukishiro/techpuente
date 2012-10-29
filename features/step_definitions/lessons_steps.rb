@@ -10,3 +10,4 @@ Then /I should see all of the lessons/ do
   puts Lesson.count
   assert a == Lesson.count
 end
+
