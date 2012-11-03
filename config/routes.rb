@@ -2,7 +2,7 @@ TechpuenteApp::Application.routes.draw do
   get "home/index"
 
   get "home/about"
-  root :to => "home#index"
+  root :to => "lessons#index"
 
   resources :lessons
 

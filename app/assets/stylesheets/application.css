@@ -42,6 +42,11 @@ nav ul li{
 nav ul li a {
     text-decoration: none;
 }
+
+
+div#page > footer {
+  margin-top: 100px;
+}
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
