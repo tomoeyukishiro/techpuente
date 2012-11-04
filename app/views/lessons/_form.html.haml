@@ -14,9 +14,9 @@
     = f.text_field :body
   .prev
     = f.label :prev
-    = f.text_field :prev
+    = collection_select(:lesson, :prev, Lesson.all, :id, :title) 
   .next
     = f.label :next
-    = f.text_field :next
+    = collection_select(:lesson, :next, Lesson.all, :id, :title) 
   .actions
     = f.submit 'Save'

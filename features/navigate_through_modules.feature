@@ -35,11 +35,7 @@ Scenario: navigate to the previous module
 
 Scenario: add new lesson
     Given I am on the new lesson page
-    And I fill in "lesson_title" with "Lesson Especial"
-    And I fill in "lesson_body" with "Es un lesson que yo quiero"
-    And I fill in "lesson_prev" with "1"
-    And I fill in "lesson_next" with "2"
-    And I press "Save"
+    When I have added "Lesson Especial" with body "Es un lesson que yo quiero", prev of "First Lesson", and next of "Second Lesson"
     Then I should see "Lesson was successfully created"
 
 Scenario: edit lesson
@@ -52,6 +48,7 @@ Scenario: edit lesson
 Scenario: delete lesson
     Given I am on the Lessons list page
     And I follow "delete_3"
-    Then I should not see "elsson"
+    Then I should not see "lesson"
 
-
+Scenario: 
+        
