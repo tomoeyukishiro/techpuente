@@ -25,12 +25,12 @@ Scenario: see list of lessons
 
 Scenario: navigate to the next module
     Given I am on the lesson page for "First Lesson"
-    When follow "Next"
+    When I follow "Next"
     Then I should see "Second Lesson"
 
 Scenario: navigate to the previous module
     Given I go to the lesson page for "Second Lesson"
-    When follow "Prev"
+    When I follow "Prev"
     Then I should see "First Lesson"
 
 Scenario: add new lesson

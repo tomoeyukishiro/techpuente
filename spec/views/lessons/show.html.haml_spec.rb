@@ -4,7 +4,9 @@ describe "lessons/show" do
   before(:each) do
     @lesson = assign(:lesson, stub_model(Lesson,
       :title => "Title",
-      :body => "Body"
+      :body => "Body",
+      :prev => 1,
+      :next => 2
     ))
   end
 
