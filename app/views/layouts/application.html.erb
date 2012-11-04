@@ -7,6 +7,26 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
+	<div id="auth">
+		<%if (session[:user_id] == nil)%>
+			<%= form_tag "/home" do %>  
+			<div class="field">  
+				<%= label_tag :email %>  
+				<%= text_field_tag :email, params[:email] %>  
+			</div>  
+			<div class="field">  
+				<%= label_tag :password %>  
+				<%= password_field_tag :password %>  
+			</div>  
+			<div class="actions"><%= submit_tag "Log in" %></div> 		
+			<% end %>  
+			<%= link_to "Sign Up", "/users/new" %>
+		<%else%>
+			<h1> Hello, <%= session[:user_id]%> </h1><br/>
+			<%= button_to "Log Out" %> <%# Need route stuff here %>
+		<%end%>		
+	</div>
+
         <div id="page">
             <header class="cf">
             <h1>
@@ -22,6 +42,11 @@
                 <li><a href="/">Account</a></li>
             </ul>
             </nav>
+      			<% if flash[:notice] %>
+        			<%= notice = flash[:notice]%>
+     				<% elsif flash[:warning]%>
+        			<%= warning = flash[:warning] %>
+						<% end %>
             </header>
             <%= yield %>
             <footer>

@@ -27,6 +27,11 @@ header h1 {
     float:left;
 }
 
+div#auth{
+    margin-top:5px;
+    float: right;
+}
+
 div#content {
     margin-bottom: 100px;
 }
@@ -41,6 +46,13 @@ nav ul li{
 }
 nav ul li a {
     text-decoration: none;
+}
+
+/*Ricardo Added this for Flash[:notice]*/
+#notice #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
 }
 /**
  * For modern browsers
