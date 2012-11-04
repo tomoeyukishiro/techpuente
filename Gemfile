@@ -33,15 +33,18 @@ group :development, :test do
   gem 'sqlite3'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'
+
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'spork-rails'
-  gem 'autotest-rails'
-  gem 'autotest-growl'
-  gem 'autotest-fsevent'
+
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+
   gem 'simplecov'
   gem 'factory_girl_rails'
 end
