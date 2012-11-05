@@ -1,10 +1,7 @@
 TechpuenteApp::Application.routes.draw do
-  get "sessions/new"
 
-  get "home/index"
-
+  # root :to => "lessons#index"
   get "home/about"
-  root :to => "lessons#index"
 
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"

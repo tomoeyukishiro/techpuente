@@ -9,14 +9,14 @@
     #page
       %header.clearfix
         %h1
-          %a{:href => "/"}
+          %a{:href => lessons_path}
             %img{:alt => "Techbridge", :src => "techbridgelogo.png"}
         
         #auth.clearfix
           - if current_user
             %p Hello, #{current_user.email}
             = button_to "Log Out", log_out_path, :method => 'get'
-          - elsif current_page?(:controller => 'lessons', :action => 'index')
+          - elsif current_page?(:controller => 'lessons')
             = form_tag sessions_path do
               .field
                 = label_tag :email

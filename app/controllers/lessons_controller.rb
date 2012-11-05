@@ -97,6 +97,27 @@ class LessonsController < ApplicationController
   # DELETE /lessons/1.json
   def destroy
     @lesson = Lesson.find(params[:id])
+
+    if @lesson.prev.present? 
+      prevLesson = Lesson.find(@lesson.prev)
+    end
+      
+    if @lesson.prev.present?
+      nextLesson = Lesson.find(@lesson.next)
+    end
+
+    if prevLesson.present? and nextLesson.present?
+      prevLesson.next = nextLesson.id
+      prevLesson.save!
+
+      nextLesson.prev = prevLesson.id
+      nextLesson.save!
+    elsif nextLesson.present?
+      nextLesson.prev = nil
+    elsif prevLesson.present?
+      prevLesson.next = nil
+    end
+
     @lesson.destroy
 
     respond_to do |format|

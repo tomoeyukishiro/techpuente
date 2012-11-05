@@ -7,9 +7,9 @@
     - @lessons.each do |lesson|
       %li
 
-        %span
+        %p
           %span= link_to 'Edit', edit_lesson_path(lesson)
-          -# %span= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' }, id: 'delete_'+lesson.id.to_s
+          %span= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' }, id: 'delete_'+lesson.id.to_s
 
         %p= lesson.title
         = link_to lesson do
