@@ -4,11 +4,13 @@ class LessonsController < ApplicationController
   def index
    
     @lessons =  []
-    nextLessonId = Lesson.first.id
-    while not nextLessonId.nil?
-      nextLesson = Lesson.find(nextLessonId)
-      @lessons.push(nextLesson)
-      nextLessonId = nextLesson.next
+    if Lesson.count > 0
+      nextLessonId = Lesson.first.id
+      while not nextLessonId.nil?
+        nextLesson = Lesson.find(nextLessonId)
+        @lessons.push(nextLesson)
+        nextLessonId = nextLesson.next
+      end
     end
 
 
