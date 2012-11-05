@@ -17,7 +17,7 @@ div#page {
 
 header {
     border-bottom: 2px solid gray;
-    margin-bottom:100px;
+    margin-bottom:70px;
 }
 
 header h1 {
@@ -27,9 +27,32 @@ header h1 {
     float:left;
 }
 
-div#content {
-    margin-bottom: 100px;
+div#auth{
+  margin-top: 10px;
+  float: right;
 }
+
+div#auth .field, div#auth a, div#auth form, div#auth p{
+  float: left;
+
+}
+div#auth .field label {
+  display:block; 
+}
+
+div#auth .field {
+  margin-right: 8px;
+}
+
+div#auth input[type="submit"], div#auth a, div#auth p {
+  margin-top: 20px;
+}
+
+
+nav#main-navigation {
+  float: left;
+}
+
 nav ul {
     margin-top:88px;
     float: right;
@@ -46,30 +69,17 @@ nav ul li a {
 
 div#page > footer {
   margin-top: 100px;
-}
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+/*Ricardo Added this for Flash[:notice]*/
+#notice #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
 }
 
-.cf:after {
-    clear: both;
-}
 
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-    *zoom: 1;
-}
+/* hack compatible with ie8 and up */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+} 
