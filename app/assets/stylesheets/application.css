@@ -18,6 +18,7 @@ div#page {
 header {
     border-bottom: 2px solid gray;
     margin-bottom:100px;
+    
 }
 
 header h1 {
@@ -28,8 +29,29 @@ header h1 {
 }
 
 div#auth{
-    margin-top:5px;
-    float: right;
+  margin-top: 10px;
+  float: right;
+}
+
+div#auth .field, div#auth a, div#auth form, div#auth p{
+  float: left;
+
+}
+div#auth .field label {
+  display:block; 
+}
+
+div#auth .field {
+  margin-right: 8px;
+}
+
+div#auth input[type="submit"], div#auth a, div#auth p {
+  margin-top: 20px;
+}
+
+
+nav#main-navigation {
+  float: left;
 }
 
 div#content {

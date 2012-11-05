@@ -1,13 +1,19 @@
 TechpuenteApp::Application.routes.draw do
+  get "sessions/new"
+
   get "home/index"
 
   get "home/about"
   root :to => "home#index"
 
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "sign_up" => "users#new", :as => "sign_up"
 
   resources :lessons
   resources :home
   resources :users
+  resources :sessions
 
 
   # The priority is based upon order of creation:

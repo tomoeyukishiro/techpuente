@@ -214,6 +214,7 @@ DEPENDENCIES
   autotest-fsevent
   autotest-growl
   autotest-rails
+  bcrypt-ruby
   capybara
   coffee-rails (~> 3.1.0)
   cucumber-rails
