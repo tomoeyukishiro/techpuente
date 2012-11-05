@@ -34,13 +34,13 @@ describe LessonsController do
     {}
   end
 
-  describe "GET index" do
-    it "assigns all lessons as @lessons" do
-      lesson = Lesson.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:lessons).should eq([lesson])
-    end
-  end
+  # describe "GET index" do
+  #   it "assigns all lessons as @lessons" do
+  #     lesson = Lesson.create! valid_attributes
+  #     get :index, {}, valid_session
+  #     assigns(:lessons).should eq([lesson])
+  #   end
+  # end
 
   describe "GET show" do
     it "assigns the requested lesson as @lesson" do
@@ -57,13 +57,13 @@ describe LessonsController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested lesson as @lesson" do
-      lesson = Lesson.create! valid_attributes
-      get :edit, {:id => lesson.to_param}, valid_session
-      assigns(:lesson).should eq(lesson)
-    end
-  end
+  # describe "GET edit" do
+  #   it "assigns the requested lesson as @lesson" do
+  #     lesson = Lesson.create! valid_attributes
+  #     get :edit, {:id => lesson.to_param}, valid_session
+  #     assigns(:lesson).should eq(lesson)
+  #   end
+  # end
 
   describe "POST create" do
     describe "with valid params" do
