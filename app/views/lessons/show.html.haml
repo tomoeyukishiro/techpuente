@@ -11,6 +11,6 @@
 \|
 = link_to 'Back', lessons_path
 
-= link_to 'Prev', lesson_path(@lesson.prev)
+= link_to 'Prev', lesson_path(@lesson.prev) unless @lesson.prev.nil?  
 
-= link_to 'Next', lesson_path(@lesson.next)
+= link_to 'Next', lesson_path(@lesson.next) unless @lesson.next.nil?

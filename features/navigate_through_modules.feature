@@ -8,9 +8,9 @@ Background: lessons have been added to the database
 
     Given the following lessons exist:
     | title              | body                                      | next      | prev  |
-    | First Lesson       | This is the sample body of the module     | 2         | 1     |
+    | First Lesson       | This is the sample body of the module     | 2         |       |
     | Second Lesson      | This is another sample body of the module | 3         | 1     |
-    | Third Lesson       | This is the 3rd elsson                    | 3         | 2     |
+    | Third Lesson       | This is the 3rd lesson                    |           | 2     |
 
 
 #Scenario: see a list of lessons
@@ -50,5 +50,10 @@ Scenario: delete lesson
     And I follow "delete_3"
     Then I should not see "lesson"
 
-Scenario: 
+Scenario: going from next to prev after deleting a module between the two modules
+    Given I am on the Lessons list page
+    When I follow "delete_2"
+    And I go to the lesson page for "First Lesson"
+    And I follow "Next"
+    Then I should be on the lesson page for "Third Lesson"
         

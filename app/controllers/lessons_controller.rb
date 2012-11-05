@@ -2,7 +2,15 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+   
+    @lessons =  []
+    nextLessonId = Lesson.first.id
+    while not nextLessonId.nil?
+      nextLesson = Lesson.find(nextLessonId)
+      @lessons.push(nextLesson)
+      nextLessonId = nextLesson.next
+    end
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,11 +49,25 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(params[:lesson])
-
+    
+    
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render json: @lesson, status: :created, location: @lesson }
+
+        if not @lesson.prev.nil?
+          prevLesson = Lesson.find(@lesson.prev)
+          prevLesson.next = @lesson.id
+          prevLesson.save!
+        end
+
+        if not @lesson.next.nil?
+          nextLesson = Lesson.find(@lesson.next)
+          nextLesson.prev = @lesson.id
+          nextLesson.save!
+        end
+
       else
         format.html { render action: "new" }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }

@@ -11,12 +11,23 @@
     = f.text_field :title
   .field
     = f.label :body
-    = f.text_field :body
+    = f.text_area :body, :size => "100x10"
+
+    - options = Lesson.all.map { |l| [l.title, l.id] }
+    - options.insert(0, ["None", nil])
   .prev
     = f.label :prev
-    = collection_select(:lesson, :prev, Lesson.all, :id, :title) 
+    - if @new
+      = f.select(:prev, options, :selected => nil)
+    - else
+      = f.select(:prev, options)
+    
   .next
     = f.label :next
-    = collection_select(:lesson, :next, Lesson.all, :id, :title) 
+    - if @new
+      = f.select(:next, options, :selected => nil)
+    - else
+      = f.select(:next, options)
+
   .actions
     = f.submit 'Save'

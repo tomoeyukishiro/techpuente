@@ -3,14 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-div#lessons {
-}
+ul#lessons {
+  
+  list-style-type: none;
+  margin: 0;
 
-article  {
-  float: left;
+  li {
+    float: left;
+    
 
-  img {
-    width: 200px;
+    img {
+      width: 200px;
+    }
   }
 }
 
