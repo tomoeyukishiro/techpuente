@@ -47,8 +47,8 @@ Scenario: edit lesson
 
 Scenario: delete lesson
     Given I am on the Lessons list page
-    And I follow "delete_3"
-    Then I should not see "lesson"
+    And I follow "delete_2"
+    Then I should not see "Second Lesson"
 
 Scenario: going from next to prev after deleting a module between the two modules
     Given I am on the Lessons list page

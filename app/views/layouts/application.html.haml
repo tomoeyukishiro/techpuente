@@ -16,7 +16,7 @@
           - if current_user
             %p Hello, #{current_user.email}
             = button_to "Log Out", log_out_path, :method => 'get'
-          - elsif current_page?(:controller => 'lessons')
+          - elsif not (current_page?(log_in_path) or current_page?(sign_up_path))
             = form_tag sessions_path do
               .field
                 = label_tag :email

@@ -1,4 +1,4 @@
-%h1 Sign Up
+%h1 Register 
 = form_for @user do |f|
   - if @user.errors.any?
     .error_messages
@@ -6,6 +6,16 @@
       %ul
         - for message in @user.errors.full_messages
           %li= message
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :middle_name
+    = f.text_field :middle_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+
   .field
     = f.label :email
     = f.text_field :email
@@ -15,4 +25,7 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
-  .actions= f.submit
+  .actions= f.submit "Create Account"
+
+  = link_to "Login to existing account", log_in_path 
+

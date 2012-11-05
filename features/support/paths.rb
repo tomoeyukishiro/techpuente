@@ -16,6 +16,9 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
+    when /^the login page/
+      '/log_in'
+     
     when /^the Lessons list page/
       lessons_path
 
