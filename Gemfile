@@ -42,7 +42,7 @@ group :development, :test do
   gem 'cucumber-rails-training-wheels'
   gem 'spork-rails'
 
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'rb-fsevent'
   gem 'guard-livereload'
   gem 'guard-rspec'
   gem 'guard-spork'
