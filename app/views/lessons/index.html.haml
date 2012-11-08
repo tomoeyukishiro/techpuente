@@ -1,4 +1,4 @@
-%h1 List of Modules
+%h3 List of Modules
 
 %section
   %nav#admin-panel
@@ -6,11 +6,9 @@
   %ul#lessons.cf
     - @lessons.each do |lesson|
       %li
-
         %p
           %span= link_to 'Edit', edit_lesson_path(lesson)
           %span= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' }, id: 'delete_'+lesson.id.to_s
-
         %p= lesson.title
         = link_to lesson do
           = image_tag("newLogo.jpeg")

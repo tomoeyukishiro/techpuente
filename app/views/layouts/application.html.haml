@@ -9,8 +9,8 @@
     #page
       %header.clearfix
         %h1
-          %a{:href => lessons_path}
-            %img{:alt => "Techbridge", :src => "techbridgelogo.png"}
+          %a{:href => "/"}
+            = image_tag "techbridgelogo.png"
         
         #auth.clearfix
           - if current_user

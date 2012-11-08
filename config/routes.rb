@@ -1,6 +1,7 @@
 TechpuenteApp::Application.routes.draw do
 
   # root :to => "lessons#index"
+  match "/" => redirect("/lessons")
   get "home/about"
 
   get "log_in" => "sessions#new", :as => "log_in"
