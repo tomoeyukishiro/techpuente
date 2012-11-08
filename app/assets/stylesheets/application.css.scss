@@ -2,6 +2,7 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
  *= require_self
  *= require_tree . 
 */
@@ -12,7 +13,7 @@ body {
 }
 div#page {
     margin:0 auto;
-    width: 960px;
+    width: 1150px;
 }
 
 header {
@@ -27,16 +28,16 @@ header h1 {
     float:left;
 }
 
-div#auth{
+div#auth {
   margin-top: 10px;
   float: right;
 }
 
 div#auth .field, div#auth a, div#auth form, div#auth p{
   float: left;
-
+    float: left;
 }
-div#auth .field label {
+.field label {
   display:block; 
 }
 
@@ -45,9 +46,8 @@ div#auth .field {
 }
 
 div#auth input[type="submit"], div#auth a, div#auth p {
-  margin-top: 20px;
+  margin-top: 25px;
 }
-
 
 nav#main-navigation {
   float: left;
@@ -69,6 +69,7 @@ nav ul li a {
 
 div#page > footer {
   margin-top: 100px;
+}
 /*Ricardo Added this for Flash[:notice]*/
 #notice #warning {
   background: rosybrown;
@@ -77,9 +78,3 @@ div#page > footer {
 }
 
 
-/* hack compatible with ie8 and up */
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-} 

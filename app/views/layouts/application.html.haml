@@ -24,8 +24,8 @@
               .field
                 = label_tag :password
                 = password_field_tag :password
-              = submit_tag "Log in"
-            = link_to "Sign Up", sign_up_path 
+              = submit_tag "Log in", :class => "btn btn-info"
+            = link_to "Sign Up", sign_up_path, :class => "btn btn-link"
 
         %nav#main-navigation.clearfix
           %ul

@@ -1,4 +1,4 @@
-%h1 Register 
+%h3 Register 
 = form_for @user do |f|
   - if @user.errors.any?
     .error_messages
@@ -25,7 +25,7 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
-  .actions= f.submit "Create Account"
-
-  = link_to "Login to existing account", log_in_path 
+  .actions
+    = f.submit "Create Account", :class => "btn btn-primary"
+    = link_to "Login to existing account", log_in_path, :class =>"btn btn-link"
 
