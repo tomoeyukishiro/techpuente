@@ -17,6 +17,6 @@ Lesson.create([
   { title: 'Why you should be a teacher', body: loip1, prev: nil, next: 2},
   { title: 'What to look out for when mentoring', body: loip2, prev: 1, next: 3},
   { title: 'How to get your child to pay attention to you', body: loip3, prev: 2, next: 4},
-  { title: 'Communicating effectively and efficiently', body: loip1, prev: 3, next: 5},
+  { title: 'Communicating effectively', body: loip1, prev: 3, next: 5},
   { title: 'Great tips on talking with their parents', body: loip2, prev: 4, next: nil},
 ])
