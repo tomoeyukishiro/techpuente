@@ -5,10 +5,9 @@ Feature: Going back to unfinished modules.
   I want to go back to the module where I left off
 
     Background:
-        Given I am not logged in
-        And the following lessons exist:
-            | title              | body                                      | next      | prev  |
-            | First Lesson       | This is the sample body of the module     |           |       |
+        Given the following lessons exist:
+        | title              | body                                      | next      | prev  |
+        | First Lesson       | This is the sample body of the module     |           |       |
 
     Scenario: Log into website from module page
         Given I am the registered user "user@gmail.com"

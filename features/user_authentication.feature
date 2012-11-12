@@ -5,8 +5,7 @@ Feature: User Authentication
     I want to be able to login to the web site
 
     Background:
-        Given I am not logged in
-        And the following lessons exist:
+        Given the following lessons exist:
             | title              | body                                      | next      | prev  |
             | First Lesson       | This is the sample body of the module     |           |       |
 
@@ -16,14 +15,14 @@ Feature: User Authentication
         When I login with valid credentials
         Then I should be on the Lessons list page
         And I should see "Logged in!"
-        And I should see "Hello, user@gmail.com"
+        And I should see "Hello, Joey"
 
     Scenario: Log into website from module page
         Given I am the registered user "user@gmail.com"
         And I am on the lesson page for "First Lesson"
         When I login with valid credentials
         Then I should see "Logged in!"
-        And I should see "Hello, user@gmail.com"
+        And I should see "Hello, Joey"
 
     Scenario: Sign up 
         Given I am on the Lessons list page

@@ -24,9 +24,9 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
-  .field
-    = f.label :admin
-    = f.text_field :admin
+  -# .field
+  -#   = f.label :admin
+  -#   = f.text_field :admin
   .actions
     = f.submit "Create Account", :class => "btn btn-primary"
     = link_to "Login to existing account", log_in_path, :class =>"btn btn-link"

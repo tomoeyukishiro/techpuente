@@ -5,7 +5,7 @@ Given /the following lessons exist/ do |lessons_table|
 end
 
 Then /I should see all of the lessons/ do
-  a = page.all('div#lessons article').length 
+  a = page.all('section#lessons ul li').length 
   assert a == Lesson.count
 end
 

@@ -1,18 +1,11 @@
 #SCENARIO: LOGIN TO WEBSITE
 
-Given /I am not logged in/ do
-end
-
-Given /that I dont have an account for the website/ do
-
-end
-
-
 Given /^I am the registered user "(.+)"$/ do |e|
   params = {
     "email"=> e,
     "password"=>"123456",
-    "password_confirmation"=>"123456"
+    "password_confirmation"=>"123456",
+    "first_name"=> "Joey"
   }
   @user = User.create(params)
 end
@@ -28,8 +21,8 @@ end
 When /^I finish registering for an account$/ do
   steps %Q{
     When I fill in "user_email" with "user@gmail.com"
-    And I fill in "user_first_name" with "FirstUser"
-    And I fill in "user_last_name" with "FirstUser"
+    And I fill in "user_first_name" with "Joey"
+    And I fill in "user_last_name" with "Bonzo"
     And I fill in "user_password" with "123456"
     And I fill in "user_password_confirmation" with "123456"
     And I press "Create Account"

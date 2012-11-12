@@ -8,9 +8,9 @@ Background: lessons have been added to the database
 
     Given the following lessons exist:
     | title              | body                                      | next      | prev  |
-    | First Lesson       | This is the sample body of the module     | 2         | 1     |
+    | First Lesson       | This is the sample body of the module     | 2         |       |
     | Second Lesson      | This is another sample body of the module | 3         | 1     |
-    | Third Lesson       | This is the 3rd lesson                    | 3         | 2     |
+    | Third Lesson       | This is the 3rd lesson                    |           | 2     |
 
 
 Scenario: find and see the rich text box
