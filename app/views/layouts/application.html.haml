@@ -14,7 +14,10 @@
         
         #auth.clearfix
           - if current_user
-            %p Hello, #{current_user.email}
+            - if (current_user.admin)
+              %p Hello admin, #{current_user.first_name}
+            - else
+              %p Hello, #{current_user.first_name}
             = button_to "Log Out", log_out_path, :method => 'get'
           - elsif not (current_page?(log_in_path) or current_page?(sign_up_path))
             = form_tag sessions_path do
