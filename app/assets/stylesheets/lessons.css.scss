@@ -3,20 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-ul#lessons {
-  
-  list-style-type: none;
-  margin: 15px 0 0 0;
 
-  li {
-    float: left;
-    
-
-    img {
-      width: 200px;
-    }
-  }
-}
 
 nav#admin-panel {
 }
@@ -25,3 +12,14 @@ div#page > footer {
   clear: both;
 } 
 
+textarea#lesson_body {
+  width:500px;
+}
+
+// #content {
+//   margin:0 80px;
+// }
+
+// .tab-content {
+//   // padding:0 50px;
+// }

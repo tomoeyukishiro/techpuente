@@ -16,21 +16,17 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans serif;
     color: gray;
 }
-div#page {
-    margin:0 auto;
-    width: 1150px;
-}
 
-header {
+header#main-header {
     border-bottom: 2px solid gray;
     margin-bottom:70px;
-}
 
-header h1 {
+    h1 {
     /* background: url('techbridgelogo.png') no-repeat ; */
     /* text-indent: -9999px; */
     /* height: 100px; */
     float:left;
+  }
 }
 
 div#auth {

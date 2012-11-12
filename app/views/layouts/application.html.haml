@@ -6,8 +6,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    #page
-      %header.clearfix
+    #page.container-fluid
+      %header#main-header.clearfix
         %h1
           %a{:href => "/"}
             = image_tag "techbridgelogo.png"
@@ -38,6 +38,7 @@
       - flash.each do |name, msg|
         = content_tag :div, msg, :id =>"flash#{name}"
 
-      = yield
+      #content
+        = yield
       %footer
         Copyright blahblah

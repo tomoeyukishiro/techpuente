@@ -1,18 +1,11 @@
 class LessonsController < ApplicationController
+
+  
+
   # GET /lessons
   # GET /lessons.json
   def index
-   
-    @lessons =  []
-    if Lesson.count > 0
-      nextLessonId = Lesson.first.id
-      while not nextLessonId.nil?
-        nextLesson = Lesson.find(nextLessonId)
-        @lessons.push(nextLesson)
-        nextLessonId = nextLesson.next
-      end
-    end
-
+    @lessons = self.getAllLessons
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,6 +17,7 @@ class LessonsController < ApplicationController
   # GET /lessons/1.json
   def show
     @lesson = Lesson.find(params[:id])
+    @lessons = self.getAllLessons
 
     respond_to do |format|
       format.html # show.html.erb
@@ -125,4 +119,19 @@ class LessonsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  protected
+  def getAllLessons
+    lessons =  []
+    if Lesson.count > 0
+      nextLessonId = Lesson.first.id
+      while not nextLessonId.nil?
+        nextLesson = Lesson.find(nextLessonId)
+        lessons.push(nextLesson)
+        nextLessonId = nextLesson.next
+      end
+    end
+    return lessons
+  end 
+
 end

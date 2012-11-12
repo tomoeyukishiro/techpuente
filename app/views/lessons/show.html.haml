@@ -1,15 +1,23 @@
+#lesson-show.tabbable.tabs-right
+  %ul.nav.nav-tabs
+    - @lessons.each do |lesson|
+      %li{:class => @active}
+        = link_to lesson.title, lesson
+  
+  .tab-content
+    %header
+      = link_to 'Edit', edit_lesson_path(@lesson)
+      = link_to 'Delete', @lesson, method: :delete, data: { confirm: 'Are you sure?' }, id: 'delete_'+@lesson.id.to_s
+      \|
+      = link_to 'Back', lessons_path
+    
+    %h3= @lesson.title
+    %p= @lesson.body
+    %footer
+      %ul.pager
+        %li.previous
+          = link_to '&larr; Prev'.html_safe, lesson_path(@lesson.prev) unless @lesson.prev.nil?  
+        %li.next
+          = link_to 'Next &rarr;'.html_safe, lesson_path(@lesson.next) unless @lesson.next.nil?
 
-%p
-  %b Title:
-  = @lesson.title
-%p
-  %b Body:
-  = @lesson.body
 
-= link_to 'Edit', edit_lesson_path(@lesson)
-\|
-= link_to 'Back', lessons_path
-
-= link_to 'Prev', lesson_path(@lesson.prev) unless @lesson.prev.nil?  
-
-= link_to 'Next', lesson_path(@lesson.next) unless @lesson.next.nil?

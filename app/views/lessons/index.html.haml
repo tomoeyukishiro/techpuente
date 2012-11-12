@@ -3,13 +3,14 @@
 %section
   %nav#admin-panel
     = link_to 'Create New Lesson', new_lesson_path
-  %ul#lessons.cf
+  %ul.thumbnails
     - @lessons.each do |lesson|
-      %li
-        %p
-          %span= link_to 'Edit', edit_lesson_path(lesson)
-          %span= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' }, id: 'delete_'+lesson.id.to_s
-        %p= lesson.title
-        = link_to lesson do
-          = image_tag("newLogo.jpeg")
+      %li.span3
+        .thumbnail
+          %span 
+            = link_to 'Edit', edit_lesson_path(lesson)
+            = link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' }, id: 'delete_'+lesson.id.to_s
+          %h4= lesson.title
+          = link_to lesson do
+            = image_tag("newLogo.jpeg")
   
