@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(:version => 20121110055439) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.integer  "admin"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"
+    t.string   "name"
+    t.boolean  "admin",           :default => false, :null => false
   end
 
 end
