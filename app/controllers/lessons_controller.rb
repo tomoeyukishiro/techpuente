@@ -128,11 +128,15 @@ class LessonsController < ApplicationController
     current_lesson = Lesson.where(:id => current_lesson_id)
     puts "Current Lesson" 
     puts current_lesson
-    current_user = User.where(:id => session[:user_id])
-    current_user.lessons << current_lesson
-    puts "Users Lessons"
-    puts current_user.lessons
-    redirect_to lesson_path(current_lesson_id) 
+    if(session[:user_id])
+      current_user = User.where(:id => session[:user_id])
+      current_user.lessons << current_lesson
+      puts "Users Lessons"
+      puts current_user.lessons
+      redirect_to lesson_path(current_lesson_id) 
+    else
+      redirect_to lesson_path(current_lesson_id), :notice => "Please Log in to track progress" 
+    end 
   end
 
   protected
