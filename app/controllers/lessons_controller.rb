@@ -120,6 +120,21 @@ class LessonsController < ApplicationController
     end
   end
 
+ #Method used for marking a completed lesson
+  def mark_lesson
+    #Add lesson to users lessons meaning he was finished the lesson.
+    puts "++++++++++++++++++>>>>>>>>>>>>>>> Method Called"
+    current_lesson_id = params[:id]
+    current_lesson = Lesson.where(:id => current_lesson_id)
+    puts "Current Lesson" 
+    puts current_lesson
+    current_user = User.where(:id => session[:user_id])
+    current_user.lessons << current_lesson
+    puts "Users Lessons"
+    puts current_user.lessons
+    redirect_to lesson_path(current_lesson_id) 
+  end
+
   protected
   def getAllLessons
     lessons =  []

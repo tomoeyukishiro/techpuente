@@ -15,6 +15,7 @@
     %p= @lesson.body
     %footer
       %ul.pager
+        = button_to 'Done', mark_lesson_url(:id => @lesson.id), :class => "btn btn-info"
         %li.previous
           = link_to '&larr; Prev'.html_safe, lesson_path(@lesson.prev) unless @lesson.prev.nil?  
         %li.next
