@@ -53,3 +53,5 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_girl_rails'
 end
+  gem 'ckeditor', '3.7.3'
+  gem 'paperclip'

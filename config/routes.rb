@@ -1,5 +1,7 @@
 TechpuenteApp::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   # root :to => "lessons#index"
   match "/" => redirect("/lessons")
   get "home/about"
