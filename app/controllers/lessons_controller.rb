@@ -18,6 +18,7 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @lessons = self.getAllLessons
+    @current_user = User.find(session[:user_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -120,20 +121,14 @@ class LessonsController < ApplicationController
     end
   end
 
- #Method used for marking a completed lesson
-  def mark_lesson
-    #Add lesson to users lessons meaning he was finished the lesson.
-    puts "++++++++++++++++++>>>>>>>>>>>>>>> Method Called"
+  def mark_lesson               #Method used for marking lessons that we have already completed
     current_lesson_id = params[:id]
-    current_lesson = Lesson.where(:id => current_lesson_id)
-    puts "Current Lesson" 
-    puts current_lesson
+    current_lesson = Lesson.find(current_lesson_id)
     if(session[:user_id])
-      current_user = User.where(:id => session[:user_id])
+      current_user = User.find(session[:user_id])
+      #current_user.lessons                   #Contains all the lessons this user has completed
       current_user.lessons << current_lesson
-      puts "Users Lessons"
-      puts current_user.lessons
-      redirect_to lesson_path(current_lesson_id) 
+      redirect_to lesson_path(current_lesson_id), :notice => "Module marked completed"
     else
       redirect_to lesson_path(current_lesson_id), :notice => "Please Log in to track progress" 
     end 

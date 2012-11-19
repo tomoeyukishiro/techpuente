@@ -2,7 +2,7 @@
   %ul.nav.nav-tabs
     - @lessons.each do |lesson|
       %li{:class => ('active' if @lesson.id == lesson.id)}
-        = link_to lesson.title, lesson
+        = link_to lesson.title, lesson, {:style =>('color:#CC0000; font-style: italic;' if @current_user.lessons.include?(lesson))}
   
   .tab-content
     %header
