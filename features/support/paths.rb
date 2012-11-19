@@ -22,11 +22,14 @@ module NavigationHelpers
     when /^the Lessons list page/
       lessons_path
 
+    when /^the lesson page for lesson with id 2/
+      '/lessons/2'
+
     when /^the lesson page for "(.*)"/
       lesson_path(Lesson.find_by_title($1))
 
-    when /^the lesson page for lesson with id 2/
-      '/lessons/2'
+    # when /^the lesson page for lesson with id 2/
+    #   '/lessons/2'
 
     when /^the new lesson page/
       new_lesson_path

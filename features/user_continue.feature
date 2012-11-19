@@ -13,7 +13,9 @@ Feature: Going back to unfinished modules.
 
     Scenario: Continue working on unfinished models
         Given I am the registered user "user@gmail.com"
+        When I am on the home page
+        And I login with valid credentials
         And I am on the lesson page for lesson with id 2
-        When I press "Done"
+        And I press "Done"
 	Then I should see lessons I have already done lessons: 1
 
