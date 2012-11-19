@@ -17,5 +17,5 @@ Feature: Going back to unfinished modules.
         And I login with valid credentials
         And I am on the lesson page for lesson with id 2
         And I press "Done"
-	Then I should see lessons I have already done lessons: 1
+	Then I should see lessons I have already done lessons: 2
 

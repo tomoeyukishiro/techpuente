@@ -18,8 +18,9 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @lessons = self.getAllLessons
+    if (session[:user_id])
     @current_user = User.find(session[:user_id])
-
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @lesson }

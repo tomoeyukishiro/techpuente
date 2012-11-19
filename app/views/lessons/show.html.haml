@@ -2,8 +2,10 @@
   %ul.nav.nav-tabs
     - @lessons.each do |lesson|
       %li{:class => ('active' if @lesson.id == lesson.id)}
-        = link_to lesson.title, lesson, {:style =>('color:#CC0000; font-style: italic;' if @current_user.lessons.include?(lesson))}
-  
+        - if(session[:user_id])
+          = link_to lesson.title, lesson, {:style =>('color:#CC0000; font-style: italic;' if @current_user.lessons.include?(lesson))}
+        -else
+          = link_to lesson.title, lesson
   .tab-content
     %header
       = link_to 'Edit', edit_lesson_path(@lesson)
